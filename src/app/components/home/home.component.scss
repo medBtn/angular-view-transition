@@ -1,0 +1,14 @@
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.5s;  // Default fade; customize as needed
+}
+
+::view-transition-old(property-:image),
+::view-transition-new(property-:image) {
+  animation: slide-in 0.3s ease-out;  // Custom morph for images
+}
+
+@keyframes slide-in {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}

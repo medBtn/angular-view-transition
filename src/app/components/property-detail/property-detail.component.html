@@ -1,0 +1,16 @@
+ <div class="container mx-auto p-6 max-w-2xl">
+      @if (selectedProperty(); as prop) {
+        <button class="mb-6 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+                routerLink="/">← Back to Listings</button>
+        <img [src]="prop.image"
+             [alt]="prop.title"
+             class="w-full h-96 object-cover rounded-lg mb-6"
+             [style.viewTransitionName]="'property-' + prop.id + '-image'">
+        <h1 [style.viewTransitionName]="'property-' + prop.id + '-title'"
+            class="text-3xl font-bold mb-4">{{ prop.title }}</h1>
+        <p class="text-green-600 text-2xl font-bold mb-4">${{ prop.price | number }} /mo</p>
+        <p class="text-gray-700 leading-relaxed">{{ prop.description }}</p>
+      } @else {
+        <p class="text-center text-gray-500">Property not found.</p>
+      }
+    </div>
